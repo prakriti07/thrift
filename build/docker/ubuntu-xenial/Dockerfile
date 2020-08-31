@@ -49,7 +49,7 @@ RUN apt-get update && \
 
 # dotnet (core)
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/microsoft.gpg && \
-    echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > \
+    echo "deb [arch=arm64] https://packages.microsoft.com/repos/microsoft-ubuntu-xenial-prod xenial main" > \
       /etc/apt/sources.list.d/dotnetdev.list && \
 
 # node.js
