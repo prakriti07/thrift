@@ -102,7 +102,7 @@ RUN \
     rm -rf sbcl*
 
 ENV D_VERSION     2.087.0
-ENV DMD_DEB       dmd_2.087.0-0_amd64.deb
+ENV DMD_DEB       dmd_2.087.0-0_arm64.deb
 RUN \
 `# D dependencies` \
     wget -q http://downloads.dlang.org/releases/2.x/${D_VERSION}/${DMD_DEB} && \
@@ -141,8 +141,8 @@ RUN apt-get install -y --no-install-recommends \
 
 # golang
 ENV GOLANG_VERSION 1.13.1
-ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz
-ENV GOLANG_DOWNLOAD_SHA256 94f874037b82ea5353f4061e543681a0e79657f787437974214629af8407d124
+ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.linux-arm64.tar.gz
+ENV GOLANG_DOWNLOAD_SHA256 7e18d92f61ddf480a4f9a57db09389ae7b9dadf68470d0cb9c00d734a0c57f8d
 RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz && \
       echo "$GOLANG_DOWNLOAD_SHA256  golang.tar.gz" | sha256sum -c - && \
             tar -C /usr/local -xzf golang.tar.gz && \
@@ -263,7 +263,7 @@ RUN apt-get install -y --no-install-recommends \
       cppcheck \
       sloccount && \
     pip install flake8 && \
-    wget -q "https://launchpad.net/ubuntu/+source/cppcheck/1.83-2/+build/14874703/+files/cppcheck_1.83-2_amd64.deb" && \
+    wget -q "https://launchpad.net/ubuntu/+source/cppcheck/1.83-2/+build/14874703/+files/cppcheck_1.83-2_arm64.deb" && \
     dpkg -i cppcheck_1.83-2_amd64.deb && \
     rm cppcheck_1.83-2_amd64.deb
 
